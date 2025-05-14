@@ -34,7 +34,7 @@ MTS_SMS_DEFAULT_CHANNEL=default
 ### 1. Через Facade
 
 ```php
-use YourVendor\MtsSms\Facades\MtsSms;
+use Rutrue\MtsSms\Facades\MtsSms;
 
 MtsSms::send('79001234567', 'Ваш код подтверждения: 1234');
 ```
@@ -42,7 +42,7 @@ MtsSms::send('79001234567', 'Ваш код подтверждения: 1234');
 ### 2. Через Dependency Injection
 
 ```php
-use YourVendor\MtsSms\Contracts\MtsSmsDriverInterface;
+use Rutrue\MtsSms\Contracts\MtsSmsDriverInterface;
 
 class SmsController 
 {
@@ -66,8 +66,8 @@ php artisan make:notification OrderShipped
 Настройте отправку:
 
 ```php
-use YourVendor\MtsSms\Notifications\MtsSmsMessage;
-use YourVendor\MtsSms\Notifications\MtsSmsChannel;
+use Rutrue\MtsSms\Notifications\MtsSmsMessage;
+use Rutrue\MtsSms\Notifications\MtsSmsChannel;
 
 class OrderShipped extends Notification
 {
@@ -117,7 +117,7 @@ return [
 ```php
 try {
     MtsSms::send(...);
-} catch (\YourVendor\MtsSms\Exceptions\MtsSmsException $e) {
+} catch (\Rutrue\MtsSms\Exceptions\MtsSmsException $e) {
     // Получить контекст ошибки:
     $context = $e->getContext();
     
