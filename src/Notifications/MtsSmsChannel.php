@@ -13,12 +13,37 @@ class MtsSmsChannel
 
     public function send($notifiable, Notification $notification)
     {
+        if (!method_exists($notification, 'toMtsSms')) {
+            throw new \RuntimeException(
+                'Notification is missing toMtsSms method'
+            );
+        }
+
         $message = $notification->toMtsSms($notifiable);
 
+        if (!$message instanceof MtsSmsMessage) {
+            throw new \RuntimeException(
+                'toMtsSms must return instance of MtsSmsMessage'
+            );
+        }
+
         return $this->smsService->send(
-            $notifiable->routeNotificationFor('mts-sms'),
+            $this->getRecipient($notifiable),
             $message->content,
-            $message->params ?? []
+            $message->params
         );
+    }
+
+    protected function getRecipient($notifiable): string
+    {
+        if ($recipient = $notifiable->routeNotificationFor('mts-sms')) {
+            return $recipient;
+        }
+
+        if (isset($notifiable->phone)) {
+            return $notifiable->phone;
+        }
+
+        throw new \RuntimeException('No recipient specified for MTS SMS');
     }
 }

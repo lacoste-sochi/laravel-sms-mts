@@ -1,7 +1,7 @@
 # MTS SMS Driver for Laravel
 
-[![Latest Version](https://img.shields.io/packagist/v/your-vendor/mts-sms.svg)](https://packagist.org/packages/your-vendor/mts-sms)
-[![PHP Version](https://img.shields.io/packagist/php-v/your-vendor/mts-sms)](https://php.net)
+[![Latest Version](https://img.shields.io/packagist/v/rutrue/mts-sms.svg)](https://packagist.org/packages/rutrue/mts-sms)
+[![PHP Version](https://img.shields.io/packagist/php-v/rutrue/mts-sms)](https://php.net)
 [![Laravel Version](https://img.shields.io/badge/Laravel-^12.0-red.svg)](https://laravel.com)
 
 Пакет для интеграции с MTS SMS API в Laravel-приложениях. Поддерживает отправку SMS через Notification канал.
@@ -11,7 +11,7 @@
 1. Установите пакет через Composer:
 
 ```bash
-composer require your-vendor/mts-sms
+composer require rutrue/mts-sms
 ```
 
 2. Опубликуйте конфигурационный файл:
