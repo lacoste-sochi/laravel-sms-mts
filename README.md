@@ -21,16 +21,16 @@ php artisan vendor:publish --tag=sms-mts-config
 ```env
 # Обязательные для всех методов
 SMS_MTS_AUTH_METHOD=token # или 'basic' для авторизации с логином и паролем
-SMS_MTS_SENDER_NAME=YourBrand
+SMS_MTS_SENDER_NAME=MTSM_Test # Имя отправителя
 
 # Для token-аутентификации
 SMS_MTS_TOKEN=your_api_token
-SMS_MTS_API_URL_TOKEN= # опционально
+SMS_MTS_API_URL_TOKEN=https://api.mts.ru/client-omni-adapter_production/1.0.2/mcom/messageManagement/messages
 
 # Для basic-аутентификации
 SMS_MTS_LOGIN=your_login
 SMS_MTS_PASSWORD=your_password
-SMS_MTS_API_URL_BASIC= # опционально
+SMS_MTS_API_URL_BASIC=https://omnichannel.mts.ru/http-api/v1/messages
 
 # Настройки времени ожидания
 SMS_MTS_TIMEOUT=10
