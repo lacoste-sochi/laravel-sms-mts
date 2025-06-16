@@ -1,5 +1,6 @@
 {
   "name": "rutrue/laravel-sms-mts",
+  "version": "1.0.0",
   "description": "Пакет для отправки смс через шлюз МТС (Laravel)",
   "type": "library",
   "license": "MIT",
